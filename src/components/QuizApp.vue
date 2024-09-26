@@ -157,7 +157,7 @@ export default {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
-    width: 480px;
+    width: 450px;
     height: 560px;
     display: flex;
     flex-direction: column;
@@ -171,7 +171,7 @@ export default {
 
 .quiz__question-card {
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: left;
     animation: slideIn 0.5s ease forwards;
 }
@@ -212,7 +212,7 @@ export default {
 
 .quiz__option-button {
     display: block;
-    width: 380px;
+    width: 350px;
     padding: 15px;
     margin: 20px 0;
     border: 2px solid rgba(96, 102, 208, 0.7);
@@ -268,8 +268,8 @@ export default {
 }
 
 .quiz__next-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+    transform: translateX(-1px) translateY(-2px);
+    box-shadow: 0 10px 2px  rgb(255, 165, 0,0.2);
 }
 
 @keyframes slideIn {

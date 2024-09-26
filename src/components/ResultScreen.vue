@@ -23,7 +23,7 @@
   
   <style scoped>
   .result-box {
-    padding: 1.5rem;
+    padding: 15px;
     background-color: white;
     border-color: blue;
     border-radius: 12px;
@@ -48,7 +48,7 @@
     }
 
     .result-box__score-text {
-      font-size: 33px;
+      font-size: 36px;
       font-weight: 400;
       color: green;
     }
@@ -66,7 +66,7 @@
       
     .result-box__restart-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 1rem 2rem rgba(29, 53, 93, 0.2) ;
+        box-shadow: 0 10px 20px rgba(29, 53, 93, 0.2) ;
     }
   
 

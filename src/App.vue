@@ -22,18 +22,22 @@
   }
 
   body {
+    background-image: url(./assets/background.png);
+    background-size: cover;
+    background-position: top;
+
     height: 95vh;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 32px;
     color: white;
     padding: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
 
-    background-image: url(./assets/background.png);
-    background-size: cover;
+    
   }
 
 </style>
