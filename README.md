@@ -1,24 +1,23 @@
-# countryquiz
+<h1 align="center">Country Quiz</h1>
 
-## Project setup
-```
-npm install
-```
+<div align="center">
+  <h3>
+    <a href="https://github.com/Kguinesh/countryquiz">
+      Solution
+    </a>
+  </h3>
+</div>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Table of Contents
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [Overview](#overview)
+  - [Built With](#built-with)
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Overview
+![alt text](../countryquiz/src/assets/Screenshot.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Build this project was a little challenging but gratifying at the end, and it was a great opportunity to practise Vue.js.
+
+### Built With
+
+- [VueJs]
