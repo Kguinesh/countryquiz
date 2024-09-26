@@ -9,9 +9,9 @@
             <ul class="quiz__options-list">
                 <li v-for="(option, index) in question.options" :key="index">
                     <button class="quiz__option-button" @click="checkAnswer(option)" :class="{
-                          'quiz__option-button--correct': correctOption === option,  // Always turn green for the correct option
-                          'quiz__option-button--incorrect': selectedOption === option && !option.isCorrect,  // Turn red for incorrect answer
-                          'quiz__option-button--disabled': selectedOption !== null // Add this class when an option is selected
+                          'quiz__option-button--correct': correctOption === option,  // Always turns green for the correct option
+                          'quiz__option-button--incorrect': selectedOption === option && !option.isCorrect,  // Turns red for incorrect answer
+                          'quiz__option-button--disabled': selectedOption !== null
                         }" :disabled="selectedOption !== null">
                         {{ getOptionLabel(index) }}. {{ option.text }}
                     </button>
@@ -23,8 +23,8 @@
             <button class="quiz__next-button" @click="nextQuestion"><b>Next</b></button>
         </div>
 
-        <div v-else-if="quizStarted && !question" class="result">
-            <ResultScreen />
+        <div v-else-if="quizStarted && !question">
+            <ResultScreen :score="score" @restart-quiz="restartQuiz" />
         </div>
     </div>
 </div>
@@ -50,6 +50,7 @@ export default {
             showNextButton: false, // Controls the visibility of Next button
             selectedOption: null, // Tracks the selected option
             correctOption: null, // Tracks the correct option
+            score: 0
         };
     },
     mounted() {
@@ -114,6 +115,7 @@ export default {
                     this.question = null; // This will trigger the result screen
                 }, 1000);
             } else {
+                this.score++;
                 this.showNextButton = true; // Show next button when correct answer is selected
             }
         },
@@ -122,6 +124,14 @@ export default {
             return labels[index];
         },
 
+        restartQuiz() {
+            this.quizStarted = true;
+            this.score = 0;
+            this.selectedOption = null;
+            this.correctOption = null;
+            this.showNextButton = false;
+            this.nextQuestion();
+        }
     }
 };
 </script>

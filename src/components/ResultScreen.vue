@@ -5,10 +5,11 @@
       <div class="result-box__text"> 
         <h1>Results</h1>
         <p>
-          You got <b>score</b> correct answers.</p>
+          You got
+          <span class="result-box__score-text"> <b>{{ score }} </b></span> 
+          correct answers.</p>
       </div>
-
-      <button class="result-box__restart-button">Try Again</button>
+      <button class="result-box__restart-button" @click="$emit('restart-quiz')">Try Again</button>
     </div>
   </template>
   
@@ -46,7 +47,11 @@
       font-size: 18px; 
     }
 
-    
+    .result-box__score-text {
+      font-size: 33px;
+      font-weight: 400;
+      color: green;
+    }
   
     .result-box__restart-button {
       background-color: white;
