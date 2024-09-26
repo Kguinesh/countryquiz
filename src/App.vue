@@ -21,6 +21,10 @@
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 62.5%;
+  }
+
   body {
     background-image: url(./assets/background.png);
     background-size: cover;
@@ -29,15 +33,13 @@
     height: 95vh;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 3.2rem;
     color: white;
-    padding: 30px;
+    padding: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
-
-    
+    margin-top: 3rem;
   }
 
 </style>

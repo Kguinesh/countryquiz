@@ -23,11 +23,11 @@
   
   <style scoped>
   .result-box {
-    padding: 15px;
+    padding: 1.5rem;
     background-color: white;
     border-color: blue;
-    border-radius: 12px;
-    height: 450px; 
+    border-radius: 1.2rem;
+    height: 45rem; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,20 +35,20 @@
   }
     
   .result-box__img {
-      width: 275px; 
-      height: 150px; 
-      margin-bottom: 20px; 
+      width: 27.5rem; 
+      height: 15rem; 
+      margin-bottom: 2rem; 
       object-fit: cover;
     }
   
     .result-box__text {
       text-align: center;
       color: blue;
-      font-size: 18px; 
+      font-size: 1.8rem; 
     }
 
     .result-box__score-text {
-      font-size: 36px;
+      font-size: 3.6rem;
       font-weight: 400;
       color: green;
     }
@@ -56,17 +56,17 @@
     .result-box__restart-button {
       background-color: white;
       color: blue;
-      padding: 15px 40px;
+      padding: 1.5rem 4rem;
       border-color: blue;
-      border-radius: 12px;
+      border-radius: 1.2rem;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 1.6rem;
       transition: background-color 0.3s ease;
     }
       
     .result-box__restart-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(29, 53, 93, 0.2) ;
+        transform: translateY(-.2rem);
+        box-shadow: 0 1rem 2rem rgba(29, 53, 93, 0.2) ;
     }
   
 

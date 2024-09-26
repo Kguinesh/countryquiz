@@ -147,18 +147,18 @@ export default {
 
 .quiz__title {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 3rem;
     text-transform: uppercase;
     align-self: flex-start;
-    margin: 10px;
+    margin: 1rem;
 }
 
 .quiz__box {
     background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 450px;
-    height: 560px;
+    padding: 3rem;
+    border-radius: 1.2rem;
+    width: 45rem;
+    height: 56rem;
     display: flex;
     flex-direction: column;
 }
@@ -166,12 +166,12 @@ export default {
 .quiz__box-image {
     position: absolute;
     right: 0;
-    top: -28px;
+    top: -2.8rem;
 }
 
 .quiz__question-card {
-    padding: 20px;
-    border-radius: 12px;
+    padding: 2rem;
+    border-radius: 1.2rem;
     text-align: left;
     animation: slideIn 0.5s ease forwards;
 }
@@ -185,39 +185,39 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    min-height: 400px;
+    min-height: 40rem;
 }
 
 .quiz__question-text {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color:  #2f527b;
     max-width: 90%;
 }
 
 .quiz__flag-image {
-    margin-top: 10px;
-    width: 80px;
-    border-radius: 5px;
-    border: 1px solid #1d355d;
+    margin-top: 1rem;
+    width: 8rem;
+    border-radius: .5rem;
+    border: .1rem solid #1d355d;
 }
 
 .quiz__options-list {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 2rem;
     animation: slideIn 0.8s ease-in-out;
     animation-delay: 0.1s;
 }
 
 .quiz__option-button {
     display: block;
-    width: 350px;
-    padding: 15px;
-    margin: 20px 0;
-    border: 2px solid rgba(96, 102, 208, 0.7);
-    border-radius: 12px;
-    font-size: 16px;
+    width: 35rem;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: .2rem solid rgba(96, 102, 208, 0.7);
+    border-radius: 1.2rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: white;
@@ -252,29 +252,29 @@ export default {
 .quiz__next-button-container {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .quiz__next-button {
     background-color: #f9a826;
     color: white;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.6rem;
     transition: background-color 0.3s ease;
     animation: slideIn 0.8s ease-in-out;
 }
 
 .quiz__next-button:hover {
-    transform: translateX(-1px) translateY(-2px);
-    box-shadow: 0 10px 2px  rgb(255, 165, 0,0.2);
+    transform: translateX(-1px) translateY(-.2rem);
+    box-shadow: 0 1rem 2rem  rgb(255, 165, 0 ,0.2);
 }
 
 @keyframes slideIn {
     0% {
-        transform: translateX(-15px);
+        transform: translateX(-1.5rem);
         opacity: 0;
     }
 
