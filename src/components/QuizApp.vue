@@ -22,6 +22,10 @@
         <div v-if="showNextButton" class="quiz__next-button-container">
             <button class="quiz__next-button" @click="nextQuestion"><b>Next</b></button>
         </div>
+
+        <div v-else-if="quizStarted && !question" class="result">
+            <ResultScreen />
+        </div>
     </div>
 </div>
 </template>
@@ -29,18 +33,23 @@
     
 <script>
 import axios from 'axios';
+import ResultScreen from './ResultScreen.vue';
 
 export default {
     name: 'QuizApp',
+
+    components: {
+        ResultScreen
+    },
 
     data() {
         return {
             countries: [],
             question: null,
-            quizStarted: true, // Automatically start the quiz
-            showNextButton: false, // Control visibility of Next button
-            selectedOption: null, // Track the selected option
-            correctOption: null, // Track the correct option
+            quizStarted: true, // Automatically starts the quiz
+            showNextButton: false, // Controls the visibility of Next button
+            selectedOption: null, // Tracks the selected option
+            correctOption: null, // Tracks the correct option
         };
     },
     mounted() {
@@ -112,7 +121,8 @@ export default {
             const labels = ['A', 'B', 'C', 'D'];
             return labels[index];
         },
-    },
+
+    }
 };
 </script>
 
