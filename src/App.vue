@@ -52,7 +52,7 @@
     font-family: var(--primary-font);
     font-weight: var(--font-weight-1);
     font-size: 3.2rem;
-    color: --color-white;
+    color: var(--color-white);
     padding: 3rem;
     display: flex;
     align-items: center;
