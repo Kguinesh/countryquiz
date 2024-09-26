@@ -109,10 +109,10 @@ export default {
             // Whether the selected option is correct or incorrect, we want to show the result
             if (!selectedOption.isCorrect) {
                 this.showNextButton = false; // No next button since the quiz will end
-                // Delay for 2 seconds before showing the result screen
+                // Delay for 1 seconds before showing the result screen
                 setTimeout(() => {
                     this.question = null; // This will trigger the result screen
-                }, 2000);
+                }, 1000);
             } else {
                 this.showNextButton = true; // Show next button when correct answer is selected
             }
@@ -127,7 +127,7 @@ export default {
 </script>
 
     
-<style lang="css" scoped>
+<style scoped>
 .quiz {
     display: flex;
     flex-direction: column;
