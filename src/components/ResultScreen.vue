@@ -1,6 +1,13 @@
 <template>
     <div class="result-box">
       <img class="result-box__img" src="../assets/winners.svg" alt="winners">
+
+      <div class="result-box__text"> 
+        <h1>Results</h1>
+        <p>
+          You got <b>score</b> correct answers.</p>
+      </div>
+      
     </div>
   </template>
   
@@ -38,26 +45,6 @@
       font-size: 18px; 
     }
   
-    .result-box__score-text {
-      font-size: 33px;
-      font-weight: 400;
-      color: green;
-    }
-  
-    .result-box__restart-button {
-      background-color: white;
-      color: blue;
-      padding: 15px 40px;
-      border-color: blue;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-      
-    .result-box__restart-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 1rem 2rem rgba(29, 53, 93, 0.2) ;
-    }
+
   </style>
   
