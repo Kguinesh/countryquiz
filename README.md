@@ -14,7 +14,7 @@
   - [Built With](#built-with)
 
 ## Overview
-![alt text](.../src/assets/Screenshot.png)
+![alt text](https://github.com/Kguinesh/countryquiz/blob/main/src/assets/Screenshot.png)
 
 Build this project was a little challenging but gratifying at the end, and it was a great opportunity to practise Vue.js.
 
