@@ -27,6 +27,9 @@
             <ResultScreen :score="score" @restart-quiz="restartQuiz" />
         </div>
     </div>
+    <footer class="quiz__footer">
+        <p>created by <a href="https://github.com/Kguinesh">kguinesh</a> - devChallenges.io</p>
+    </footer>    
 </div>
 </template>
 
@@ -268,6 +271,18 @@ export default {
         &:hover {
         transform: translateX(-.1rem) translateY(-.2rem);
         box-shadow: 0 1rem 2rem --color-box-shadow-1;
+        }
+    }
+
+    &__footer {
+        font-size: 1.5rem;
+        font-weight: var(--font-weight-1);
+        font-family: var(--footer-font);
+        padding: .2rem;
+
+        a {
+            font-weight: var(--font-weight-2);
+            color: var(--color-white);
         }
     }
 }

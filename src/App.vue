@@ -15,6 +15,7 @@
 <style>
 :root {
   --primary-font: 'Poppins', sans-serif; 
+  --footer-font: 'Montserrat', sans-serif;
 
   --font-weight-1: 400;
   --font-wight-2: 700;
