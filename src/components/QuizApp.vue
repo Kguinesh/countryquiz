@@ -145,7 +145,7 @@ export default {
     position: relative;
 
     .quiz__title {
-        font-weight: 700;
+        font-weight: var(--font-wight-2);
         font-size: 3rem;
         text-transform: uppercase;
         align-self: flex-start;
@@ -153,7 +153,7 @@ export default {
     }
 
     &__box {
-        background-color: white;
+        background-color: var(--color-white);
         padding: 3rem;
         border-radius: 1.2rem;
         width: 45rem;
@@ -190,7 +190,7 @@ export default {
     &__question-text {
         font-size: 2rem;
         margin-bottom: 1rem;
-        color:  #2f527b;
+        color:  var(--color-question);
         max-width: 90%;
     }
 
@@ -198,7 +198,7 @@ export default {
         margin-top: 1rem;
         width: 8rem;
         border-radius: .5rem;
-        border: .1rem solid #1d355d;
+        border: .1rem solid var(--color-primary);
     }
 
     &__options-list {
@@ -214,31 +214,31 @@ export default {
         width: 35rem;
         padding: 1.5rem;
         margin: 2rem 0;
-        border: .2rem solid rgba(96, 102, 208, 0.7);
+        border: .2rem solid var(--color-option-border);
         border-radius: 1.2rem;
         font-size: 1.6rem;
         cursor: pointer;
         transition: all 0.3s ease;
-        background-color: white;
-        color: #6066d0cc;
+        background-color: var(--color-white);
+        color: var(--color-option-text);
         text-align: left;
 
         &:hover {
-            background-color: #f9a826;
-            border-color: #f9a826;
-            color: white;
+            background-color: var(--color-button);
+            border-color: var(--color-button);
+            color: var(--color-white);
             }
 
         &--correct {
-            background-color:  #60bf88;
-            color: white;
-            border-color:  #60bf88;
+            background-color: var(--color-answer-right);
+            color: var(--color-white);
+            border-color: var(--color-answer-right);
         }
 
         &--incorrect {
-            background-color: #ea8282;
-            color: white;
-            border-color: #ea8282;
+            background-color: var(--color-answer-wrong);
+            color: var(--color-white);
+            border-color: var(--color-answer-wrong);
         }
 
         &--disabled {
@@ -267,7 +267,7 @@ export default {
 
         &:hover {
         transform: translateX(-.1rem) translateY(-.2rem);
-        box-shadow: 0 1rem 2rem  rgb(255, 165, 0 ,0.2);
+        box-shadow: 0 1rem 2rem --color-box-shadow-1;
         }
     }
 }

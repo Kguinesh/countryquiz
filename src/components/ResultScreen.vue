@@ -26,8 +26,8 @@
   <style lang="scss" scoped>
   .result-box {
     padding: 1.5rem;
-    background-color: white;
-    border-color: blue;
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
     border-radius: 1.2rem;
     height: 45rem; 
     display: flex;
@@ -50,15 +50,15 @@
 
     &__score-text {
       font-size: 3.6rem;
-      font-weight: 400;
-      color: green;
+      font-weight: --font-weight-1;
+      color: var(--color-answer-right);
     }
   
     &__restart-button {
-      background-color: white;
-      color: blue;
+      background-color: var(--color-white);
+      color: var(--color-primary);
       padding: 1.5rem 4rem;
-      border-color: blue;
+      border-color: var(--color-primary);
       border-radius: 1.2rem;
       cursor: pointer;
       font-size: 1.6rem;
@@ -66,7 +66,7 @@
 
       &:hover {
         transform: translateY(-.2rem);
-        box-shadow: 0 1rem 2rem rgba(29, 53, 93, 0.2) ;
+        box-shadow: 0 1rem 2rem --color-box-shadow-2;
         }
     }
   }
