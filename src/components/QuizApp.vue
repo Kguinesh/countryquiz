@@ -140,7 +140,7 @@ export default {
 </script>
 
     
-<style lang="scss"coped>
+<style lang="scss" scoped>
 .quiz {
     display: flex;
     flex-direction: column;
