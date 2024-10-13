@@ -1,7 +1,7 @@
 <template>
 <div class="quiz">
     <h1 class="quiz__title">Country Quiz</h1>
-    <div class="quiz__box">
+    <div class="quiz__box" v-if="quizReady">
         <img v-if="question && quizStarted" class="quiz__box-image" src="../assets/adventure.svg" alt="adventure">
         <div v-if="question && quizStarted" :class="['quiz__question-card', question.flag ? 'quiz__question-card--has-flag' : 'quiz__question-card--no-flag']">
             <img v-if="question.flag" :src="question.flag" alt="Country flag" class="quiz__flag-image" />
@@ -50,6 +50,7 @@ export default {
             countries: [],
             question: null,
             quizStarted: true, // Automatically starts the quiz
+            quizReady: false, //Controls if the quiz is ready to show
             showNextButton: false, // Controls the visibility of Next button
             selectedOption: null, // Tracks the selected option
             correctOption: null, // Tracks the correct option
@@ -64,6 +65,7 @@ export default {
             this.quizStarted = true;
             await this.loadCountries();
             this.nextQuestion();
+            this.quizReady = true;
         },
         async loadCountries() {
             const response = await axios.get('https://restcountries.com/v3.1/all?fields=name,capital,flags');
