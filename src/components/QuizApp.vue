@@ -177,7 +177,7 @@ export default {
         padding: 2rem;
         border-radius: 1.2rem;
         text-align: left;
-        animation: slideIn 0.5s ease forwards;
+        animation: slideIn 2s ease forwards;
 
         &--has-flag {
             display: block;
@@ -210,8 +210,8 @@ export default {
         list-style: none;
         padding: 0;
         margin-top: 2rem;
-        animation: slideIn 0.8s ease-in-out;
-        animation-delay: 0.1s;
+        //animation: slideIn 0.8s ease-in-out;
+        //animation-delay: 0.1s;
     }
 
     &__option-button {
@@ -268,10 +268,10 @@ export default {
         cursor: pointer;
         font-size: 1.6rem;
         transition: background-color 0.3s ease;
-        animation: slideIn 0.8s ease-in-out;
+        //animation: slideIn 0.8s ease-in-out;
 
         &:hover {
-        transform: translateX(-.1rem) translateY(-.2rem);
+        //transform: translateX(-.1rem) translateY(-.2rem);
         box-shadow: 0 1rem 2rem --color-box-shadow-1;
         }
     }
