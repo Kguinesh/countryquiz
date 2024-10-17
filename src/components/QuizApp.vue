@@ -29,7 +29,7 @@
     </div>
     <footer class="quiz__footer">
         <p>created by <a href="https://github.com/Kguinesh">kguinesh</a> - devChallenges.io</p>
-    </footer>    
+    </footer>
 </div>
 </template>
 
@@ -165,6 +165,12 @@ export default {
         height: 56rem;
         display: flex;
         flex-direction: column;
+
+        //making sure it stays in center using position absolute
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     &__box-image {
