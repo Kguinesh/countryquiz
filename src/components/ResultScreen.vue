@@ -9,14 +9,21 @@
           <span class="result-box__score-text"> <b>{{ score }} </b></span> 
           correct answers.</p>
       </div>
-      <button class="result-box__restart-button" @click="$emit('restart-quiz')">Try Again</button>
+      <ButtonComp label="Try Again" @click="$emit('restart-quiz')" />
     </div>
   </template>
   
   
   <script >
+import ButtonComp from './ButtonComp.vue';
+
   export default {
     name: 'ResultScreen',
+
+    components: {
+      ButtonComp
+    },
+
     props: {
         score: Number
     }
@@ -25,50 +32,36 @@
   
   <style lang="scss" scoped>
   .result-box {
-    padding: 1.5rem;
-    background-color: var(--color-white);
-    border-color: var(--color-primary);
-    border-radius: 1.2rem;
-    height: 45rem; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
 
-    &__img {
-      width: 27.5rem; 
-      height: 15rem; 
-      margin-bottom: 2rem; 
-      object-fit: cover;
-    }
-  
-    &__text {
-      text-align: center;
-      color: blue;
-      font-size: 1.8rem; 
-    }
+  &__img {
+    width: 15rem;
+    margin-bottom: 2rem;
+  }
 
-    &__score-text {
-      font-size: 3.6rem;
-      font-weight: --font-weight-1;
-      color: var(--color-answer-right);
-    }
-  
-    &__restart-button {
-      background-color: var(--color-white);
+  &__text {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
       color: var(--color-primary);
-      padding: 1.5rem 4rem;
-      border-color: var(--color-primary);
-      border-radius: 1.2rem;
-      cursor: pointer;
-      font-size: 1.6rem;
-      transition: background-color 0.3s ease;
+    }
 
-      &:hover {
-        transform: translateY(-.2rem);
-        box-shadow: 0 1rem 2rem --color-box-shadow-2;
-        }
+    p {
+      font-size: 1.8rem;
+      color: var(--color-primary-dark);
     }
   }
+
+  &__score-text {
+    color: var(--color-primary);
+    font-size: 2rem;
+  }
+}
   </style>
   
