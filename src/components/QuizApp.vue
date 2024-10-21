@@ -9,11 +9,11 @@
             <div class="quiz__options">
                 <ul class="quiz__options-list">
                     <li v-for="(option, index) in question.options" :key="index">
-                        <ButtonComp
+                        <ButtonComp 
                             :label="`${getOptionLabel(index)}. ${option.text}`"
                             :isCorrect="correctOption === option"
                             :isIncorrect="selectedOption === option && !option.isCorrect"
-                            :isDisabled="selectedOption !== null"
+                            :isDisabled="selectedOption !==null"
                             @click="checkAnswer(option)"
                         />
                     </li>
@@ -146,7 +146,7 @@ export default {
 </script>
 
     
-<style lang="scss" scoped>
+<style lang="scss">
 .quiz {
   display: flex;
   flex-direction: column;

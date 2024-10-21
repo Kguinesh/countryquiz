@@ -19,11 +19,11 @@
     <button
         :class = "[
             'button',
-            isCorrect ? 'button--correct':'',
-            isIncorrect ? 'button--incorrect':'',
-            isDisabled ? `button-disabled`: ''
+            isCorrect ? 'button-correct' : '',
+            isIncorrect ? 'button-incorrect':'',
+            isDisabled ? 'button-disabled': ''
         ]"
-        :disabled="disabled"
+        :disabled="isDisabled"
         @click="onClick"
     >
         <b>{{label}}</b>
@@ -53,7 +53,7 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .button {
   background-color: var(--color-white);
   color: black;
@@ -70,13 +70,13 @@
     color: var(--color-white);
   }
 
-  &--correct {
+  &-correct {
     background-color: var(--color-answer-right);
     color: var(--color-white);
     border-color: var(--color-answer-right);
   }
 
-  &--incorrect {
+  &-incorrect {
     background-color: var(--color-answer-wrong);
     color: var(--color-white);
     border-color: var(--color-answer-wrong);
