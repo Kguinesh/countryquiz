@@ -23,7 +23,7 @@
             isIncorrect ? 'button-incorrect':'',
             isDisabled ? 'button-disabled': ''
         ]"
-        :disabled="isDisabled"
+        :disabled="disabled"
         @click="onClick"
     >
         <b>{{label}}</b>
