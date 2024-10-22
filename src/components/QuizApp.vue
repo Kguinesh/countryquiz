@@ -48,6 +48,7 @@
 import axios from 'axios';
 import ResultScreen from './ResultScreen.vue';
 import ButtonComp from './ButtonComp.vue';
+import { useStore } from '@/store/useStore';
 
 export default {
     name: 'QuizApp',
@@ -131,15 +132,20 @@ export default {
             this.selectedOption = selectedOption; // Store the selected option
             this.correctOption = this.question.options.find(option => option.isCorrect); // Store the correct option
 
+            //use store where we stored the score
+            const quizScore = useStore();
+
             // Whether the selected option is correct or incorrect, we want to show the result
             if (!selectedOption.isCorrect) {
                 this.showNextButton = false; // No next button since the quiz will end
                 // Delay for 1 seconds before showing the result screen
                 setTimeout(() => {
+                    this.score = quizScore.score;
                     this.question = null; // This will trigger the result screen
                 }, 1000);
+
             } else {
-                this.score++;
+                quizScore.incrementScore(); //increments the score
                 this.showNextButton = true; // Show next button when correct answer is selected
             }
         },
@@ -149,6 +155,9 @@ export default {
         },
 
         restartQuiz() {
+            const quizStore = useStore(); //use store where we stored the score
+            quizStore.resetScore(); //resets the score
+
             this.quizStarted = true;
             this.score = 0;
             this.selectedOption = null;
