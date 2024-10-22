@@ -82,7 +82,7 @@
     border-color: var(--color-answer-wrong);
   }
 
-  &--disabled {
+  &-disabled {
     pointer-events: none;
     cursor: default;
     opacity: 0.8;
