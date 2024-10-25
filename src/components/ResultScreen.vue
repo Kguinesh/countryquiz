@@ -6,10 +6,10 @@
         <h1>Results</h1>
         <p>
           You got
-          <span class="result-box__score-text"> <b>{{ score }} </b></span> 
+          <span class="result-box__score-text">{{ score }}</span> 
           correct answers.</p>
       </div>
-      <ButtonComp label="Try Again" @click="$emit('restart-quiz')" />
+      <ButtonComp label="Try Again" buttonType="try-again" @click="$emit('restart-quiz')" />
     </div>
   </template>
   
@@ -31,37 +31,40 @@ import ButtonComp from './ButtonComp.vue';
   </script>
   
   <style lang="scss" scoped>
-  .result-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-
-  &__img {
-    width: 15rem;
-    margin-bottom: 2rem;
-  }
-
-  &__text {
-    margin-bottom: 2rem;
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--color-primary);
-    }
-
-    p {
-      font-size: 1.8rem;
-      color: var(--color-primary-dark);
-    }
-  }
-
-  &__score-text {
-    color: var(--color-primary);
-    font-size: 2rem;
-  }
+.result-box {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
 }
-  </style>
+
+.result-box__img {
+  width: 28rem;
+}
+
+.result-box__text {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1d355d;
+}
+
+p {
+  font-size: 2rem;
+  color: #1d355d; 
+}
+
+.result-box__score-text {
+  font-size: 3rem; 
+  font-weight: 700;
+  color: #60bf88;
+}
+
+</style>
   

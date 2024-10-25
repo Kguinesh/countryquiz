@@ -14,11 +14,11 @@
 
 <style>
 :root {
-  --primary-font: 'Poppins', sans-serif; 
-  --footer-font: 'Montserrat', sans-serif;
+  --primary-font: "Poppins", sans-serif; 
+  --footer-font: "Montserrat", sans-serif;
 
   --font-weight-1: 400;
-  --font-wight-2: 700;
+  --font-weight-2: 700;
 
   --color-white: #fff;
   --color-question:  #2f527b;
@@ -28,8 +28,6 @@
   --color-button: #f9a826;
   --color-answer-right: #60bf88;
   --color-answer-wrong: #ea8282;
-  --color-box-shadow-1:  rgb(255, 165, 0 ,0.2);
-  --color-box-shadow-2: rgba(29, 53, 93, 0.2);
 }
 
   *, 
@@ -45,20 +43,14 @@
   }
 
   body {
+    height: 100vh;
     background-image: url(./assets/background.png);
     background-size: cover;
-    background-position: top;
-
-    height: 95vh;
-    font-family: var(--primary-font);
-    font-weight: var(--font-weight-1);
-    font-size: 3.2rem;
-    color: var(--color-white);
-    padding: 3rem;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
   }
 
 </style>
