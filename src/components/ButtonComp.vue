@@ -1,11 +1,13 @@
 <template> 
     <button
         :class = "[
-            'button',
-            buttonType,
-            isCorrect ? 'button-correct' : '',
-            isIncorrect ? 'button-incorrect':'',
-            isDisabled ? 'button-disabled': ''
+            'text-2xl p-6 rounded-xl text-center cursor-pointer border-2 border-solid relative z-1 hover:text-white',
+            buttonType === 'options' ? ' text-optiontext  border-optionborder-og text-start  hover:bg-buttoncolor hover:border-buttoncolor' : '',
+            isCorrect ? 'bg-answers-right !border-answers-right text-white' : '',
+            isIncorrect ? 'bg-answers-wrong !border-answers-wrong text-white' : '',
+            isDisabled ? 'pointer-events-none cursor-default opacity-80' : '',
+            buttonType === 'next' ? 'bg-buttoncolor !p-4 text-white font-extrabold border-buttoncolor w-40 hover:animate-buttonNext before:content-empty2 before:absolute before:-top-1 before:-left-1 before:-right-1 before:-bottom-1 before:-z-1 before:bg-gradient-to-r from-buttoncolor to-buttoncolor before:bg-200% before:rounded-xl before:duration-1000 hover:before:blur-xl'  : '',
+            buttonType === 'try-again' ? 'text-primarycolor border-primarycolor w-60 overflow-hidden before:content-empty2 before:w-0 before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-r from-optionborder-og to-optionborder-light before:ease-in-out before:duration-500 before:block before:-z-1 before:hover:w-60' : '',
         ]"
         :disabled="disabled"
         @click="onClick"
@@ -25,7 +27,7 @@
             isDisabled: Boolean,
             buttonType: {
               type: String,
-              default: 'option' //default type
+              default: '' //default type
             }
         },
 
@@ -37,129 +39,4 @@
             }
         }
     };
-
-
 </script>
-
-<style lang="scss" scoped>
-.button {
-  background-color: #fff;
-  color: #6066d0cc;
-  font-size: 1.5rem;
-  font-weight: 400;
-  padding: 1.5rem 1.5rem;
-  border: 2px solid rgba(96, 102, 208, 0.7);
-  border-radius: 12px;
-  text-align: start;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-.button:hover {
-  background-color: #f9a826;
-  border-color: #f9a826;
-  color: #fff;
-}
-
-.button-correct {
-  background-color: #60bf88;
-  border-color: #60bf88;
-  color: #fff;
-}
-
-.button-incorrect {
-  background-color: #ea8282;
-  border-color: #ea8282;
-  color: #fff;
-}
-
-.button-disabled {
-  pointer-events: none;
-  cursor: default;
-  opacity: 0.8;
-}
-
-.button.next {
-  background-color: #f9a826;
-  color: #fff;
-  border: 2px solid #f9a826;
-  width: 10rem;
-  text-align: center;
-}
-
-.button.button.next:hover {
-  animation: buttonnext 8s linear infinite;
-  border: none;
-}
-
-@keyframes buttonnext {
-  0% {
-    background-position: 0%;
-  }
-
-  100% {
-    background-position: 400%;
-  }
-}
-
-.button.next:before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-  background: linear-gradient(90deg, #f9a826, #f9a826, #f9a826, #f9a826);
-  background-size: 200%;
-  border-radius: 15px;
-  transition: 1s;
-}
-
-.button.next:hover::before {
-  filter: blur(20px);
-}
-
-.button.try-again {
-  background-color: #fff;
-  color: #1d355d;
-  border: 2px solid #1d355d;
-  width: 15rem;
-  text-align: center;
-  position: relative; 
-  overflow: hidden;
-  transition:
-    color 0.48s 0s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.48s cubic-bezier(0.23, 1, 0.32, 1)
-}
-
-.button.try-again:hover {
-  color: #fff;
-  transition:
-    color 0.48s 0.24s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.48s 0.1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.button.try-again:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0%;
-  top: 50%;
-  transform: translateY(-50%) scaleX(0);
-  width: 15rem;
-  height: 100%;
-  background: #1d355d;
-  transition:
-    transform 0.48s 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-    width 0.48s 0.1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.button.try-again:hover::before {
-  transform: translateY(-50%) scaleX(1);
-  width: 100%;
-  transition: transform 0.48s 0.1s cubic-bezier(0.23, 1, 0.32, 1),
-              width 0.48s 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-  </style>

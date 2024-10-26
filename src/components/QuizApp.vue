@@ -1,21 +1,22 @@
 <template>
-<div class="quiz">
-    <h1 class="quiz__title">Country Quiz</h1>
+<div class="flex flex-col items-center w-quizwidth">
+    <h1 class="font-bold text-5xl uppercase self-start mb-4">Country Quiz</h1>
 
-    <div v-if="isLoading" class="loader__box">
-        <div class="quiz__loader"></div>
-        <p class="quiz__loader-text">loading...</p>
+    <div v-if="isLoading" class="bg-white w-full h-80vh rounded-xl flex flex-col items-center justify-center">
+        <div class="quiz-loader w-16 h-16 m-auto relative before:content-empty before:w-24 before:h-6 before:bg-optionborder-light before:rounded-50% before:absolute before:top-70% before:-left-5 before:animate-shadow after:content-empty after:w-full after:h-full after:bg-optionborder-og after:rounded-md after:absolute after:-top-9 after:-left-1.5 after:animate-jump"></div>
+        <p class="text-optionborder-og text-xl absolute top-56% left-50% -translate-x-50% -translate-y-50%">loading...</p>
     </div>
-
-    <div class="quiz__box" v-if="!isLoading && quizReady">
-        <img v-if="question && quizStarted" class="quiz__box-image" src="../assets/adventure.svg" alt="adventure">
-        <div v-if="question && quizStarted" :class="['quiz__question-card', question.flag ? 'quiz__question-card--has-flag' : 'quiz__question-card--no-flag']">
-            <img v-if="question.flag" :src="question.flag" alt="Country flag" class="quiz__flag-image" />
-            <h2 class="quiz__question-text"><b>{{ question.text }}</b></h2>
-            <div class="quiz__options">
-                <ul class="quiz__options-list">
-                    <li v-for="(option, index) in question.options" :key="index">
-                        <ButtonComp 
+    
+    <div class="bg-white w-full h-80vh rounded-xl flex flex-col justify-center relative" v-if="!isLoading && quizReady">
+        <img v-if="question && quizStarted" class="absolute -top-32 right-0" src="../assets/adventure.svg" alt="adventure">
+        <div v-if="question && quizStarted" :class="['pt-0 pb-16 px-16 flex flex-col items-start', question.flag ? 'pt-12' : 'pt-10']">
+            <img v-if="question.flag" :src="question.flag" alt="Country flag" class="w-40 h-24 mb-6 object-cover border border-solid border-question rounded-lg" />
+            <h2 class="text-question text-4xl mb-8"><b>{{ question.text }}</b></h2>
+            <div class="w-full overflow-hidden">
+                <ul class="list-none grid gap-8 justify-items-stretch">
+                    <li v-for="(option, index) in question.options" :key="index" class="grid self-stretch justify-self-stretch">
+                        <ButtonComp
+                            button-type="options" 
                             :label="`${getOptionLabel(index)}. ${option.text}`"
                             :isCorrect="correctOption === option"
                             :isIncorrect="selectedOption === option && !option.isCorrect"
@@ -28,7 +29,7 @@
             </div>
         </div>
 
-        <div v-if="showNextButton" class="quiz__next-button-container">
+        <div v-if="showNextButton" class="flex items-center justify-end mr-20">
             <ButtonComp label="Next" buttonType="next" @click="nextQuestion" />
         </div>
 
@@ -37,8 +38,8 @@
         </div>
     </div>
 
-    <footer class="quiz__footer">
-        <p>created by <a href="https://github.com/Kguinesh">kguinesh</a> - devChallenges.io</p>
+    <footer class="mt-4 text-montserrat text-2xl">
+        <p>created by <a href="https://github.com/Kguinesh" class="text-white">kguinesh</a> - devChallenges.io</p>
     </footer>
 </div>
 </template>
@@ -168,189 +169,3 @@ export default {
     }
 };
 </script>
-
-    
-<style lang="scss">
-.quiz {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 46.4rem; 
-}  
-
-.quiz__title {
-    font-weight: 700;
-    font-size: 3.2rem;
-    text-transform: uppercase;
-    align-self: flex-start;
-    margin-bottom: 1rem;
-}
-
-.loader__box {
-    background-color: #fff;
-    width: 100%;
-    height: 80vh;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.quiz__loader {
-    width: 48px;
-    height: 48px;
-    margin: auto;
-    position: relative;
-}
-
-.quiz__loader:before {
-    content: '';
-    width: 48px;
-    height: 5px;
-    background: rgba(60, 66, 179, 0.7);
-    position: absolute;
-    top: 40px;
-    left: 0;
-    border-radius: 50%;
-    animation: shadow 0.5s linear infinite;
-}
-
-.quiz__loader:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: rgba(96, 102, 208, 0.7);
-    position: absolute;
-    top: -20px;
-    left: 0;
-    border-radius: 4px;
-    animation: jump 0.5s linear infinite;
-}
-
-@keyframes shadow {
-    0%, 
-    100% {
-        transform: scale(1, 1);
-    }
-
-    50% {
-        transform: scale(1.2, 1)
-    }
-}
-
-@keyframes jump {
-    15% {
-        border-bottom-right-radius: 3px;
-    }
-
-    25% {
-        transform: translateY(9px) rotate(22.5deg);
-    }
-
-    50% {
-        transform: translateY(18px) scale(1, .9) rotate(45deg);
-        border-bottom-right-radius: 40px;
-    }
-
-    75% {
-        transform: translateY(9px) rotate(67.5deg);
-    }
-
-    100% {
-        transform: translateY(0) rotate(90deg);
-    }
-}
-
-.quiz__loader-text {
-    color: rgba(96, 102, 208, 0.7); //color of question
-    font-size: 1.2rem;
-    font-weight: 400;
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.quiz__box {
-    background-color: #fff;
-    width: 100%;
-    height: 80vh;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.quiz__box-image {
-    position: absolute;
-    top: -8rem;
-    right: 0;
-}
-
-.quiz__question-card {
-    padding: 3rem 4rem 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.quiz__question-card--has-flag {
-    padding-top: 4rem; 
-}
-
-.quiz__question-card--no-flag {
-    padding-top: 3rem;
-}
-
-.quiz__flag-image {
-    width: 10rem;
-    height: 6rem;
-    margin-bottom: 1.5rem;
-    object-fit: cover;
-    border: 1px solid #2f527b;
-    border-radius: 0.5rem;
-}
-
-.quiz__question-text {
-    color: #2f527b;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.quiz__options {
-    width: 100%;
-    overflow: hidden;
-}
-
-.quiz__options-list {
-    list-style: none;
-    display: grid;
-    grid-gap: 2rem;
-    justify-items: stretch;
-}
-
-li {
-    display: grid;
-    align-self: stretch;
-    justify-self: stretch;
-}
- 
-.quiz__next-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 5rem;
-}
-
-.quiz__footer {
-    margin-top: 1rem;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-}
-
-a {
-    color: #fff;
-} 
-</style>
