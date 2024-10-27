@@ -1,19 +1,19 @@
 <template>
-<div class="flex flex-col items-center w-quizwidth">
-    <h1 class="font-bold text-5xl uppercase self-start mb-4">Country Quiz</h1>
+<div class="flex flex-col items-center sm:w-46rem l:w-40rem s:w-30rem">
+    <h1 class="font-bold sm:text-5xl l:text-4xl s:text-3xl uppercase self-start mb-4">Country Quiz</h1>
 
-    <div v-if="isLoading" class="bg-white w-full h-80vh rounded-xl flex flex-col items-center justify-center">
+    <div v-if="isLoading" class="h-75vh bg-white rounded-xl w-full flex flex-col items-center justify-center">
         <div class="quiz-loader w-16 h-16 m-auto relative before:content-empty before:w-24 before:h-6 before:bg-optionborder-light before:rounded-50% before:absolute before:top-70% before:-left-5 before:animate-shadow after:content-empty after:w-full after:h-full after:bg-optionborder-og after:rounded-md after:absolute after:-top-9 after:-left-1.5 after:animate-jump"></div>
         <p class="text-optionborder-og text-xl absolute top-56% left-50% -translate-x-50% -translate-y-50%">loading...</p>
     </div>
-    
-    <div class="bg-white w-full h-80vh rounded-xl flex flex-col justify-center relative" v-if="!isLoading && quizReady">
-        <img v-if="question && quizStarted" class="absolute -top-32 right-0" src="../assets/adventure.svg" alt="adventure">
-        <div v-if="question && quizStarted" :class="['pt-0 pb-16 px-16 flex flex-col items-start', question.flag ? 'pt-12' : 'pt-10']">
-            <img v-if="question.flag" :src="question.flag" alt="Country flag" class="w-40 h-24 mb-6 object-cover border border-solid border-question rounded-lg" />
-            <h2 class="text-question text-4xl mb-8"><b>{{ question.text }}</b></h2>
+
+    <div class="h-75vh w-full bg-white rounded-xl flex flex-col justify-center relative" v-if="!isLoading && quizReady">
+        <img v-if="question && quizStarted" class="absolute right-0 sm:w-80 sm:-top-40 l:w-64 l:-top-32 s:w-48 s:-top-24" src="../assets/adventure.svg" alt="adventure">
+        <div v-if="question && quizStarted" :class="['pt-0 sm:pb-16 sm:px-16 l:pb-12 l:px-12 s:pb-8 s:px-8 flex flex-col items-start', question.flag ? 'sm:pt-12 l:pt-8 s:pt-4' : 'sm:pt-16 l:pt-12 s:pt-8']">
+            <img v-if="question.flag" :src="question.flag" alt="Country flag" class="w-36 h-24 mb-6 object-cover border border-solid border-question !rounded-lg" />
+            <h2 class="text-question sm:text-4xl sm:mb-8 l:text-3xl l:mb-4 s:text-2xl s:mb-2"><b>{{ question.text }}</b></h2>
             <div class="w-full overflow-hidden">
-                <ul class="list-none grid gap-8 justify-items-stretch">
+                <ul class="list-none grid sm:gap-8 l:gap-6 s:gap-4 justify-items-stretch">
                     <li v-for="(option, index) in question.options" :key="index" class="grid self-stretch justify-self-stretch">
                         <ButtonComp
                             button-type="options" 
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div v-if="showNextButton" class="flex items-center justify-end mr-20">
+        <div v-if="showNextButton" class="flex items-center justify-end sm:mr-20 l:mr-16 s:mr12">
             <ButtonComp label="Next" buttonType="next" @click="nextQuestion" />
         </div>
 

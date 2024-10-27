@@ -52,6 +52,11 @@ module.exports = {
         ]
       },
 
+      height: {
+        inherit: 'inherit',
+        '75vh': '75vh' //total width for box
+      },
+
       keyframes: {
         shadow: {
             '0%, 100%': {transform: 'scale(1, 1)'},
@@ -79,8 +84,10 @@ module.exports = {
         }
       },
 
-      height: {
-        '80vh': '80vh' //total width for box
+      screens: {
+        's': '320px',
+        'm': '375px',
+        'l': '425px'
       },
 
       spacing: {
@@ -91,7 +98,9 @@ module.exports = {
 
       width: {
         '28rem': '28rem',
-        quizwidth: '46rem' //total width of quiz
+        '30rem': '30rem',
+        '40rem': '40rem',      
+        '46rem': '46rem', //total width of quiz
       },
 
       zIndex: {

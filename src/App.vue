@@ -24,7 +24,7 @@
   }
 
   body {
-    @apply h-lvh bg-cover font-poppins text-white flex items-center justify-center; 
+    @apply h-screen bg-cover font-poppins text-white flex items-center justify-center pt-20; 
     background-image: url(./assets/background.png);
   }
 
