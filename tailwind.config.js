@@ -84,6 +84,10 @@ module.exports = {
         }
       },
 
+      lineHeight: {
+        '3.5rem': '3.5rem' 
+      },
+
       screens: {
         's': '320px',
         'm': '375px',
@@ -92,15 +96,19 @@ module.exports = {
 
       spacing: {
         '50%': '50%',
-        '56%': '56%',
+        '60%': '60%',
         '70%': '70%'
       },
 
       width: {
         '28rem': '28rem',
         '30rem': '30rem',
-        '40rem': '40rem',      
+        '32rem': '32rem',
+        '35rem': '35rem',
+        '40rem': '40rem',    
+        '45rem': '45rem',  
         '46rem': '46rem', //total width of quiz
+        '80rem': '80rem'
       },
 
       zIndex: {
