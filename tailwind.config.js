@@ -52,9 +52,15 @@ module.exports = {
         ]
       },
 
+      fontfontSize: {
+        '2rem': '2rem'
+      },
+
       height: {
         inherit: 'inherit',
-        '75vh': '75vh' //total width for box
+        '55vh': '55vh',
+        '75vh': '75vh', //total width for box
+        '85vh': '85vh'
       },
 
       keyframes: {
@@ -101,6 +107,7 @@ module.exports = {
       },
 
       width: {
+        '25rem': '25rem',
         '28rem': '28rem',
         '30rem': '30rem',
         '32rem': '32rem',
@@ -108,6 +115,7 @@ module.exports = {
         '40rem': '40rem',    
         '45rem': '45rem',  
         '46rem': '46rem', //total width of quiz
+        '50rem': '50rem',
         '80rem': '80rem'
       },
 

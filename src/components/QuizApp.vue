@@ -11,9 +11,9 @@
         <img v-if="question && quizStarted" class="absolute right-0 sm:w-80 sm:-top-40 l:w-64 l:-top-32 s:w-48 s:-top-24" src="../assets/adventure.svg" alt="adventure">
         <div v-if="question && quizStarted" :class="['pt-0 sm:pb-16 sm:px-16 l:pb-12 l:px-12 s:pb-8 s:px-8 flex flex-col items-start', question.flag ? 'sm:pt-12 l:pt-8 s:pt-4' : 'sm:pt-16 l:pt-12 s:pt-8']">
             <img v-if="question.flag" :src="question.flag" alt="Country flag" class="w-36 h-24 mb-6 object-cover border border-solid border-question rounded-none" />
-            <h2 class="text-question sm:text-4xl sm:mb-8 l:text-3xl l:mb-4 s:text-2xl s:mb-2"><b>{{ question.text }}</b></h2>
+            <h2 class="text-question sm:text-2rem sm:mb-8 l:text-3xl l:mb-4 s:text-2xl s:mb-2"><b>{{ question.text }}</b></h2>
             <div class="w-full overflow-hidden">
-                <ul class="list-none grid sm:gap-8 l:gap-6 s:gap-4 justify-items-stretch">
+                <ul class="list-none grid justify-items-stretch sm:gap-8 l:gap-6 s:gap-4">
                     <li v-for="(option, index) in question.options" :key="index" class="grid self-stretch justify-self-stretch">
                         <ButtonComp
                             button-type="options" 
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div v-if="quizStarted && question" class="flex justify-between sm:mx-20 l:mx-16 s:mx-12">
+        <div v-if="quizStarted && question" class="flex sm:flex-row sm:justify-between sm:mx-20 l:flex-col-reverse l:items-center l:mx-16 s:flex-col-reverse s:items-center s:mx-12">
             <ButtonComp v-if="showLearnMoreButton" label="Learn More" buttonType="learn-more" @click="openCountryDetails"></ButtonComp>
             <ButtonComp v-if="showNextButton" label="Next" buttonType="btn" @click="nextQuestion" />
             <ButtonComp v-if="!showNextButton && showLearnMoreButton" label="Result" buttonType="btn" @click="showResult" />
@@ -104,7 +104,7 @@ export default {
                 this.nextQuestion();
                 this.quizReady = true; //shows the quiz
                 this.isLoading = false; //hides loader    
-            }, 1000); //1000
+            }, 1500); //1000
             
         },
         async loadCountries() {
