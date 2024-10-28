@@ -30,14 +30,14 @@ The country quiz app is a simple and interactive application where users select 
 To clone and run this application, you'll need [Git](https://git) and [Node.js](https://nodejs.org/en) (which comes with [npm](https://www.npmjs.com/)) installed on your computer. 
 From your command line:
 
-# Clone this repository
+#### Clone this repository
    <br />For example, run this command in your terminal/command prompt:
    ```
    git clone https://github.com/<your-github-username>/countryquiz.git
    ```
    **Replace \<your-github-username> with your username**
 
-# Install all dependencies(You need Node installed in your machine)
+#### Install all dependencies(You need Node installed in your machine)
   <br />Run the following command:
   ```
   npm install 
@@ -45,7 +45,7 @@ From your command line:
   yarn install  
   ```
 
-# Run the app
+#### Run the app
   ```
   npm start  
   ```
