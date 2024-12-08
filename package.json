@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-css": "npx tailwindcss -i src/assets/tailwindcss.css -o public/styles.css --watch"
+    "build-css": "npx tailwindcss -i src/assets/tailwindcss.css -o public/styles.css --watch",
+     "test": "vitest"
   },
   "dependencies": {
     "axios": "^1.7.7",

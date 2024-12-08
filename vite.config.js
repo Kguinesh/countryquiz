@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   test: {
-    environment: 'jsdom', // Ensures DOM is available
     globals: true,        // Allows global APIs like describe/it
+    environment: 'jsdom', // Ensures DOM is available
   },
 });
